@@ -1,5 +1,18 @@
-" PATTERN MATCHING
+" ---------------------------------------------------------------
+" VIM Syntax file for Answer Set Programming 
+" (specifically, clasp from http://potassco.sourceforge.net/)
+"
+" Author: Sean Policarpio
+" Date: 30.08.2012
+" ---------------------------------------------------------------
 
+if version < 600
+   syntax clear
+elseif exists("b:current_syntax")
+  finish
+endif
+
+" PATTERN MATCHING
 syn match bad_fact '[\s]\?[A-Z]\+[0-9a-zA-Z]*\.'
 
 syn match atom '[a-z0-9]\+[0-9a-zA-Z]*' containedin=rule_body nextgroup=atom_brackets
@@ -21,15 +34,14 @@ syn match upper_bound_choice '}\d'
 syn match bad_fact '^[A-Z]\+[0-9a-zA-Z]*\s'
 
 
-
 " HIGHLIGHTING
-hi def link const                 PreProc
-hi def link hide                  PreProc
-hi def link comment               Comment
-hi def link predicate_term        Character
-hi def link predicate_variable    Identifier
-hi def link atom                  Statement
-hi def link fact                  Type
-hi def link bad_fact              Error
-hi def link lower_bound_choice    Number
-hi def link upper_bound_choice    Number
+highlight link const                 PreProc
+highlight link hide                  PreProc
+highlight link comment               Comment
+highlight link predicate_term        Character
+highlight link predicate_variable    Identifier
+highlight link atom                  Statement
+highlight link fact                  Type
+highlight link bad_fact              Error
+highlight link lower_bound_choice    Number
+highlight link upper_bound_choice    Number
